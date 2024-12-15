@@ -1,0 +1,28 @@
+version: '3.8'
+services:
+  frontend:
+    build: ./listarr-frontend
+    ports:
+      - "3000:3000"
+    
+  backend:
+    build: ./listarr-backend
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+    environment:
+      - DATABASE_URL=postgresql://postgres:yourpassword@db:5432/yourdb
+
+  db:
+    image: postgres:latest
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_PASSWORD=yourpassword
+      - POSTGRES_DB=yourdb
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
