@@ -12,8 +12,11 @@ services:
     depends_on:
       - db
     environment:
-      - DATABASE_URL=postgresql://postgres:yourpassword@db:5432/yourdb
-
+      - DB_HOST=db
+      - DB_PORT=5432
+      - DB_USER=postgres
+      - DB_PASSWORD=yourpassword
+      - DB_NAME=yourdb
   db:
     image: postgres:latest
     ports:

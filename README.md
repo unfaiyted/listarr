@@ -19,7 +19,7 @@ A modern web application for managing and organizing lists, built with a fronten
 
 1. Clone the repository with submodules:
 ```bash
-git clone --recursive https://github.com/yourusername/listarr.git
+git clone --recursive https://github.com/unfaiyted/listarr.git
 cd listarr
 ```
 
@@ -85,5 +85,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - Built with Bun
 - Docker containerization
 - All contributors and maintainers
-
 
