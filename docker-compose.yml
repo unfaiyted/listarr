@@ -1,10 +1,12 @@
-version: '3.8'
+version: "3.8"
 services:
   frontend:
     build: ./frontend
     ports:
       - "3000:3000"
-    
+    environment:
+      - API_URL=http://backend:8080
+
   backend:
     build: ./backend
     ports:
@@ -17,6 +19,8 @@ services:
       - DB_USER=postgres
       - DB_PASSWORD=yourpassword
       - DB_NAME=yourdb
+    volumes:
+      - config:/app/config
   db:
     image: postgres:latest
     ports:
@@ -29,3 +33,9 @@ services:
 
 volumes:
   postgres_data:
+  config:
+    driver: local
+    driver_opts:
+      type: none
+      device: ./temp_config
+      o: bind
