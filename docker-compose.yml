@@ -37,5 +37,5 @@ volumes:
     driver: local
     driver_opts:
       type: none
-      device: ./temp_config
+      device: /config/listarr/temp_config
       o: bind
