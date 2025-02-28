@@ -20,7 +20,7 @@ services:
       - LISTARR_DB_PASSWORD=yourpassword
       - LISTARR_DB_NAME=yourdb
     volumes:
-      - config:/app/config
+      - ./temp_config:/app/config
   db:
     image: postgres:latest
     ports:
@@ -33,9 +33,3 @@ services:
 
 volumes:
   postgres_data:
-  config:
-    driver: local
-    driver_opts:
-      type: none
-      device: /config/listarr/temp_config
-      o: bind
