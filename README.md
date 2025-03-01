@@ -1,29 +1,30 @@
 # Listarr
 
-A modern web application for managing and organizing lists, built with a frontend and backend architecture.
+A web application for managing and organizing lists from various sources and syncing those lists with Emby, Plex and Jellyfin (TV Series, Movies, and Music) as well as Navidrome clients.
 
-## 🚀 Features
+## 🚀 Featurese
 
-- Frontend built with Bun and modern web technologies
-- Backend API service
-- Docker containerization
+- Frontend built with Bun and Svelte
+- Backend API service written in GoLang
+- Docker containerization for easy deployment
 - Modular architecture with submodules
 
 ## 📋 Prerequisites
 
 - Docker and Docker Compose
 - Git (for submodule management)
-- Bun (for frontend development)
 
 ## 🛠️ Installation
 
 1. Clone the repository with submodules:
+
 ```bash
 git clone --recursive https://github.com/unfaiyted/listarr.git
 cd listarr
 ```
 
 2. Initialize and update submodules:
+
 ```bash
 git submodule update --init --recursive
 ```
@@ -31,6 +32,7 @@ git submodule update --init --recursive
 ## 🏗️ Development Setup
 
 ### Frontend
+
 ```bash
 cd listarr-frontend
 bun install
@@ -38,6 +40,7 @@ bun run dev
 ```
 
 ### Backend
+
 ```bash
 cd listarr-backend
 # Add backend setup instructions here
@@ -46,17 +49,19 @@ cd listarr-backend
 ## 🐳 Docker Deployment
 
 Build and run the entire stack:
+
 ```bash
-docker-compose up --build
+docker compose up -d --build
 ```
 
 Individual services can be built and run separately:
+
 ```bash
 # Frontend only
-docker-compose up frontend
+docker compose up frontend
 
 # Backend only
-docker-compose up backend
+docker compose up backend
 ```
 
 ## 🏗️ Project Structure
@@ -85,4 +90,3 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - Built with Bun
 - Docker containerization
 - All contributors and maintainers
-
